@@ -22,6 +22,8 @@ h2 {
 }
 
 main {
+  position: relative;
+
   padding-top: 64px;
   isolation: isolate;
   max-width: 100%;
@@ -93,9 +95,29 @@ a {
   margin-bottom: 64px;
 }
 
+.centered-stuff.floating {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  pointer-events: none;
+}
+
 .max-width-wrapper {
   max-width: 680px;
   margin: 0 auto;
+}
+
+.centered-stuff.floating .max-width-wrapper {
+  height: 100%;
+}
+
+.centered-stuff:not(.floating) {
+  overflow: hidden;
+}
+
+.centered-stuff.floating aside {
+  pointer-events: auto;
 }
 
 .visually-hidden {
@@ -144,6 +166,10 @@ a {
   .social-icons {
     display: none;
   }
+
+  /* main {
+    overflow: hidden;
+  } */
 }
 
 .heading-decoration {
